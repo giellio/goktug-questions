@@ -135,6 +135,7 @@
 * @returns {*} spreadsheet with appended values
 */
     function appendValue(spreadsheetId, range, valueInputOption, _values) {
+      const Sheets = gapi.client.sheets
       let values = [
         [
           _values[2], 
