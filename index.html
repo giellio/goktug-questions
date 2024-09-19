@@ -134,8 +134,7 @@
 * @param {list<string>} _values list of rows of values to input
 * @returns {*} spreadsheet with appended values
 */
-    Snippets.prototype.appendValues = (spreadsheetId, range,
-      valueInputOption, _values) => {
+    function appendValue(spreadsheetId, range, valueInputOption, _values) {
       let values = [
         [
           // Cell values ...
@@ -165,8 +164,8 @@
       const today = Date(Date.now());
       // Associate the FormData object with the form element
       const formData = new FormData(form);
-      formData.append("date", today.getDate()+"/"+today.getMonth()+"/"+today.getFullYear())
-      
+      formData.append("date", today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear())
+
       console.log(formData)
     }
 
