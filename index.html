@@ -124,44 +124,35 @@
       }
     }
 
-    /**
-* Appends values to the specified range
-* @param {string} spreadsheetId spreadsheet's ID
-* @param {string} range range of cells in the spreadsheet
-* @param valueInputOption determines how the input should be interpreted
-* @see
-* https://developers.google.com/sheets/api/reference/rest/v4/ValueInputOption
-* @param {list<string>} _values list of rows of values to input
-* @returns {*} spreadsheet with appended values
-*/
-    function appendValue(spreadsheetId, range, valueInputOption, _values) {
-      const Sheets = gapi.client.sheets
+    function appendValues(spreadsheetId, range, valueInputOption, _values, callback) {
       let values = [
         [
-          _values[2], 
+          _values[2],
           _values[3],
           _values[0],
           _values[1]
         ]
         // Additional rows ...
       ];
+      const body = {
+        values: values,
+      };
       try {
-        let valueRange = Sheets.newRowData();
-        valueRange.values = values;
-
-        let appendRequest = Sheets.newAppendCellsRequest();
-        appendRequest.sheetId = spreadsheetId;
-        appendRequest.rows = [valueRange];
-
-        const result = Sheets.Spreadsheets.Values.append(valueRange, spreadsheetId,
-          range, { valueInputOption: valueInputOption });
-        return result;
+        gapi.client.sheets.spreadsheets.values.append({
+          spreadsheetId: spreadsheetId,
+          range: range,
+          valueInputOption: valueInputOption,
+          resource: body,
+        }).then((response) => {
+          const result = response.result;
+          console.log(`${result.updates.updatedCells} cells appended.`);
+          if (callback) callback(response);
+        });
       } catch (err) {
-        // TODO (developer) - Handle exception
-        console.log('Failed with error %s', err.message);
+        document.getElementById('content').innerText = err.message;
+        return;
       }
-    };
-
+    }
     const form = document.querySelector("#form");
 
     function sendData() {
