@@ -161,7 +161,7 @@
     const form = document.querySelector("#form");
 
     function sendData() {
-      const today = Date(Date.now());
+      const today = new Date(Date.now());
       // Associate the FormData object with the form element
       const formData = new FormData(form);
       formData.append("date", today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear())
