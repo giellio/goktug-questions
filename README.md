@@ -1,1 +1,1 @@
-# [the page](https://giel.ambagtsheer.nl/goktug-questions/)
+# [The Page](https://giel.ambagtsheer.nl/goktug-questions/)
