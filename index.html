@@ -166,7 +166,7 @@
       const formData = new FormData(form);
       formData.append("date", today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear())
 
-      console.log(formData)
+      console.log(formData.values())
     }
 
     form.addEventListener("submit", (event) => {
