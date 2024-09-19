@@ -14,7 +14,15 @@
   <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
 
   <form id="form">
-    <input type="text" placeholder="lecture" id="lecture" name="lecture">
+    <select name="lecture" id="lecture">
+      <option value="logic exercise class">logic exercise class</option>
+      <option value="logic discussion group">logic discussion group</option>
+      <option value="logic lecture">logic lecture</option>
+      <option value="calculus lecture">calculus lecture</option>
+      <option value="calculus tutor hour">calculus tutor hour</option>
+      <option value="programming tutor hour">programming tutor hour</option>
+      <option value="programming">programming</option>
+    </select>
     <input type="text" placeholder="comment" id="comment" name="comment">
     <button type="submit">Submit</button>
   </form>
