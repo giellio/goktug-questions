@@ -168,6 +168,9 @@
       formData.append("time", today.getHours() + ":" + today.getMinutes())
 
       console.log(JSON.stringify(formData))
+      for (var pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+      }
     }
 
     form.addEventListener("submit", (event) => {
