@@ -28,7 +28,7 @@ form select *{
     opacity: 0.75;
 }
 
-form input:focus, form input:focus::placeholder, button:hover, button:focus, form select:hover, form select:focus{
+form input:focus, form input:focus::placeholder, form input:hover, button:hover, button:focus, form select:hover, form select:focus{
     background-color: white;
     outline: none;
     color: black;
