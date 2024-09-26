@@ -207,10 +207,28 @@
       console.table(range)
       const total = "Total questions: " + String(range.values.length) + "\n";
       // Flatten to string to display
-      const output = range.values.reduce(
-        (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
-        'Date, Time, Lesson, Comment:\n');
+      const output = createTable(range.values);
       document.getElementById('content').innerText = total + output;
+    }
+
+    function createTable(tableData) {
+      var table = document.createElement('table');
+      var tableBody = document.createElement('tbody');
+
+      tableData.forEach(function (rowData) {
+        var row = document.createElement('tr');
+
+        rowData.forEach(function (cellData) {
+          var cell = document.createElement('td');
+          cell.appendChild(document.createTextNode(cellData));
+          row.appendChild(cell);
+        });
+
+        tableBody.appendChild(row);
+      });
+
+      table.appendChild(tableBody);
+      return table;
     }
   </script>
   <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
