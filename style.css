@@ -4,14 +4,26 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgba(74,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(255,66,66,1) 80%);
+    background: linear-gradient(90deg, rgba(74, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 50%, rgba(255, 66, 66, 1) 80%);
 }
 
-form{
+form {
     margin-top: 10px;
 }
 
-button, form input, form select {
+table,
+th,
+td {
+    border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+button,
+form input,
+form select {
     background: none;
     border-radius: 5px;
     border: 2px white solid;
@@ -19,16 +31,22 @@ button, form input, form select {
     transition: color .3s, background-color .2s;
 }
 
-form select *{
+form select * {
     color: black;
 }
 
-::placeholder{
+::placeholder {
     color: white;
     opacity: 0.75;
 }
 
-form input:focus, form input:focus::placeholder, form input:hover, button:hover, button:focus, form select:hover, form select:focus{
+form input:focus,
+form input:focus::placeholder,
+form input:hover,
+button:hover,
+button:focus,
+form select:hover,
+form select:focus {
     background-color: white;
     outline: none;
     color: black;
