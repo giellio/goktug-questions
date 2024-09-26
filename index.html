@@ -208,7 +208,8 @@
       const total = "Total questions: " + String(range.values.length) + "\n";
       // Flatten to string to display
       const output = createTable(range.values);
-      document.getElementById('content').innerText = total + output;
+      document.getElementById('content').innerText = total;
+      document.getElementById('content').appendChild(output);
     }
 
     function createTable(tableData) {
