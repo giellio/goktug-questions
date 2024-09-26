@@ -7,6 +7,10 @@ body {
     background: linear-gradient(90deg, rgba(183,0,0,1) 0%, rgba(255,0,0,1) 80%, rgba(255,66,66,1) 100%);
 }
 
+form{
+    margin-top: 10px;
+}
+
 button, form input, form select {
     background: none;
     border-radius: 5px;
