@@ -1,0 +1,31 @@
+* {
+    color: white;
+    font-family: "Lilita One", sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(183,0,0,1) 0%, rgba(255,0,0,1) 80%, rgba(255,66,66,1) 100%);
+}
+
+button, form input, form select {
+    background: none;
+    border-radius: 5px;
+    border: 2px white solid;
+    color: white;
+    transition: color .3s, background-color .2s;
+}
+
+form select *{
+    color: black;
+}
+
+::placeholder{
+    color: white;
+    opacity: 0.75;
+}
+
+form input:focus, form input:focus::placeholder, button:hover, button:focus, form select:hover, form select:focus{
+    background-color: white;
+    outline: none;
+    color: black;
+}
