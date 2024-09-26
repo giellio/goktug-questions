@@ -204,6 +204,7 @@
         document.getElementById('content').innerText = 'No values found.';
         return;
       }
+      console.table(range)
       const total = "Total questions: " + String(range.values.length) + "\n";
       // Flatten to string to display
       const output = range.values.reduce(
