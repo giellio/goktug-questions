@@ -170,8 +170,12 @@
       const today = new Date(Date.now());
       // Associate the FormData object with the form element
       const formData = new FormData(form);
+      var minutes = today.getMinutes();
+      if (minutes.length = 1) {
+        minutes = "0" + minutes;
+      }
       formData.append("date", today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear())
-      formData.append("time", today.getHours() + ":" + today.getMinutes())
+      formData.append("time", today.getHours() + ":" + minutes)
 
       const array = []
       for (var pair of formData.entries()) {
