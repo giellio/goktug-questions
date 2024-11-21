@@ -181,6 +181,7 @@
 
         const array = []
         for (var pair of formData.entries()) {
+          if (pair[0] == 'amount') continue;
           array.push(pair[1])
         }
         appendValues('1YBhZJD_jkzJEGYbT-Q58bDe6M2bhUES6rvWlGtQn-pY', 'Sheet1!A2:D', "USER_ENTERED", array)
