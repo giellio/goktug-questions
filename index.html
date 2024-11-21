@@ -168,6 +168,7 @@
     const form = document.querySelector("#form");
 
     function sendData() {
+      const array = []
       for (let index = 0; index < document.querySelector('#amount').value; index++) {
         const today = new Date(Date.now());
         // Associate the FormData object with the form element
@@ -178,15 +179,17 @@
         }
         formData.append("date", today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear())
         formData.append("time", today.getHours() + ":" + minutes)
+        
+        var row = []
 
-        const array = []
         for (var pair of formData.entries()) {
           if (pair[0] == 'amount') continue;
-          array.push(pair[1])
+          row.push(pair[1])
         }
-        appendValues('1YBhZJD_jkzJEGYbT-Q58bDe6M2bhUES6rvWlGtQn-pY', 'Sheet1!A2:D', "USER_ENTERED", array)
-        listQuestions()
+        array.push(row)
       }
+      appendValues('1YBhZJD_jkzJEGYbT-Q58bDe6M2bhUES6rvWlGtQn-pY', 'Sheet1!A2:D', "USER_ENTERED", array)
+      listQuestions()
     }
 
     form.addEventListener("submit", (event) => {
