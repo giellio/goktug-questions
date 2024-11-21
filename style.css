@@ -55,3 +55,7 @@ form select:focus {
     outline: none;
     color: black;
 }
+
+#amount {
+    width: 5%;
+}
