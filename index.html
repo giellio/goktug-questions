@@ -137,15 +137,17 @@
     }
 
     function appendValues(spreadsheetId, range, valueInputOption, _values, callback) {
-      let values = [
-        [
-          _values[2],
-          _values[3],
-          _values[0],
-          _values[1]
-        ]
-        // Additional rows ...
-      ];
+      let values = []
+
+      for (let i = 0; i < _values.length; i++) {
+        row = _values[i]
+        values.push([
+          row[2],
+          row[3],
+          row[0],
+          row[1]
+        ])
+      }
       const body = {
         values: values,
       };
@@ -179,7 +181,7 @@
         }
         formData.append("date", today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear())
         formData.append("time", today.getHours() + ":" + minutes)
-        
+
         var row = []
 
         for (var pair of formData.entries()) {
